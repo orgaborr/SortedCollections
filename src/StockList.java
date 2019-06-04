@@ -36,7 +36,7 @@ public class StockList {
 	}
 	
 	public StockItem get(String key) {
-		return this.get(key);
+		return this.list.get(key);
 	}
 	
 	public Map<String, StockItem> Items() {
