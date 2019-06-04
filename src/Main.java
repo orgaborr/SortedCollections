@@ -8,6 +8,8 @@ public class Main {
 		
 		temp = new StockItem("table", 20.50, 25);
 		stockList.addStock(temp);
+		temp = new StockItem("table", 18.00, 3);
+		stockList.addStock(temp);
 		
 		temp = new StockItem("owen", 50.00, 20);
 		stockList.addStock(temp);
@@ -23,6 +25,19 @@ public class Main {
 		
 		System.out.println(stockList);
 
+	}
+	
+	public static int sellItem(Basket basket, String item, int quantity) {
+		//retrive the item from stock list
+		StockItem stockItem = stockList.get(item);
+		if(stockItem == null) {
+			System.out.println("We don't sell " + item);
+		}
+		if(stockList.sellStock(item, quantity) != 0) {
+			basket.addToBasket(stockItem, quantity);
+			return quantity;
+		}
+		return 0;
 	}
 
 }
