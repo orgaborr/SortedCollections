@@ -57,11 +57,17 @@ public class Main {
 		if(stockItem == null) {
 			System.out.println("We don't sell " + item);
 		}
-		if(stockList.sellStock(item, quantity) != 0) {
-			basket.addToBasket(stockItem, quantity);
-			return quantity;
-		}
-		return 0;
+		
+		//needless to check, sellStock returns 0 anyway if quantity < 1
+//		if(stockList.sellStock(item, quantity) != 0) { 
+//			basket.addToBasket(stockItem, quantity);
+//			return quantity;
+//		}
+//		return 0;
+		
+		stockList.sellStock(item, quantity);
+		basket.addToBasket(stockItem, quantity);
+		return quantity;
 	}
 
 }

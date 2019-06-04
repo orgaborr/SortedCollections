@@ -1,5 +1,5 @@
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Basket {
@@ -10,7 +10,7 @@ public class Basket {
 	 */
 	public Basket(String name) {
 		this.name = name;
-		this.list = new HashMap<>();
+		this.list = new LinkedHashMap<>();
 	}
 	
 	public int addToBasket(StockItem item, int quantity) {
