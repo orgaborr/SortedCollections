@@ -1,3 +1,4 @@
+import java.util.Map;
 
 public class Main {
 	private static StockList stockList = new StockList();
@@ -50,6 +51,13 @@ public class Main {
 		
 		System.out.println(stockList);
 		
+//		temp = new StockItem("pen", 1.10);
+//		stockList.Items().put(temp.getName(), temp); // the unmodifiableMap sends an error, but individual
+													 // items can still be changed
+		
+		for(Map.Entry<String, Double> price : stockList.priceList().entrySet()) {
+			System.out.println(price.getKey() + " costs " + price.getValue());
+		}
 
 	}
 	
