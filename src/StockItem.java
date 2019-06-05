@@ -4,19 +4,23 @@ public class StockItem implements Comparable<StockItem> {
 	private double price;
 	private int quantityInStock;
 	
+	//Constructors:
 	public StockItem(String name, double price) {
 		this.name = name;
 		this.price = price;
 		this.quantityInStock = 0;
 	}
 	
-	//overloaded the constructor to be able to initialize the object with stock quantity too
+	/*overloaded the constructor to be able to initialize the object with stock quantity too*/
 	public StockItem(String name, double price, int quantityStock) {
 		this.name = name;
 		this.price = price;
 		this.quantityInStock = quantityStock;
 	}
-
+	
+	
+	
+	//Getters:
 	public String getName() {
 		return name;
 	}
@@ -29,6 +33,9 @@ public class StockItem implements Comparable<StockItem> {
 		return quantityInStock;
 	}
 
+	
+	
+	//Setters:
 	public void setPrice(double price) {
 		if(price > 0.0) {
 			this.price = price;
@@ -42,6 +49,9 @@ public class StockItem implements Comparable<StockItem> {
 		}
 	}
 
+	
+	
+	//Overridden methods:
 	@Override
 	public boolean equals(Object obj) {
 		System.out.println("Entering StockItem.equals");

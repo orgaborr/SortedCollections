@@ -5,14 +5,17 @@ import java.util.TreeMap;
 public class Basket {
 	private final String name;
 	private final Map<StockItem, Integer> list; //item and quantity in the basket
-	/**
-	 * @param name
-	 */
+	
+	
+	//Constructor:
 	public Basket(String name) {
 		this.name = name;
 		this.list = new TreeMap<>(); //now shows added items in alphabetical order
 	}
 	
+	
+	
+	//Class methods ("Setters"):
 	public int addToBasket(StockItem item, int quantity) {
 		if((item != null) && (quantity > 0)) {
 			int inBasket = list.getOrDefault(item,  0); //if not in the basket yet, sets to 0 in it
@@ -22,10 +25,16 @@ public class Basket {
 		return 0;
 	}
 	
+	
+	
+	//Getter:
 	public Map<StockItem, Integer> Items() {
 		return Collections.unmodifiableMap(list);
 	}
-
+	
+	
+	
+	//Overridden method:
 	@Override
 	public String toString() {
 		String s = "\nShopping basket " + name + " contains " + list.size() + ((list.size() == 1) ? " item" : " items") + "\n"; // ?: short if-then-else statement
