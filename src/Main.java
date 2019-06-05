@@ -38,7 +38,9 @@ public class Main {
 		System.out.println(gaborsBasket);
 		
 		//should be errors, 0 fridge left
-		sellItem(gaborsBasket, "fridge", 1);
+		if(sellItem(gaborsBasket, "fridge", 1) == 0) {
+			System.out.println("No more fridges left");
+		}
 		sellItem(gaborsBasket, "sink", 1);
 		System.out.println(gaborsBasket);
 		
@@ -58,16 +60,13 @@ public class Main {
 			System.out.println("We don't sell " + item);
 		}
 		
-		//needless to check, sellStock returns 0 anyway if quantity < 1
-//		if(stockList.sellStock(item, quantity) != 0) { 
-//			basket.addToBasket(stockItem, quantity);
-//			return quantity;
-//		}
-//		return 0;
-		
-		stockList.sellStock(item, quantity);
-		basket.addToBasket(stockItem, quantity);
-		return quantity;
+		//makes sure there are some left in stock
+		if(stockList.sellStock(item, quantity) != 0) { 
+			basket.addToBasket(stockItem, quantity);
+			return quantity;
+		}
+		return 0;
+
 	}
 
 }
