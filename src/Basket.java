@@ -1,6 +1,6 @@
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Basket {
 	private final String name;
@@ -10,7 +10,7 @@ public class Basket {
 	 */
 	public Basket(String name) {
 		this.name = name;
-		this.list = new LinkedHashMap<>();
+		this.list = new TreeMap<>(); //now shows added items in alphabetical order
 	}
 	
 	public int addToBasket(StockItem item, int quantity) {
