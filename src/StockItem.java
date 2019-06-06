@@ -3,12 +3,14 @@ public class StockItem implements Comparable<StockItem> {
 	private final String name;
 	private double price;
 	private int quantityInStock;
+	private int reserved;
 	
 	//Constructors:
 	public StockItem(String name, double price) {
 		this.name = name;
 		this.price = price;
 		this.quantityInStock = 0;
+		this.reserved = 0;
 	}
 	
 	/*overloaded the constructor to be able to initialize the object with stock quantity too*/
@@ -47,6 +49,13 @@ public class StockItem implements Comparable<StockItem> {
 		if(newQuantity >= 0) {
 			this.quantityInStock = newQuantity;
 		}
+	}
+	
+	public void reserveStock(int quantityReserved) {
+		if(quantityReserved <= quantityInStock || quantityReserved > 0) {
+			this.reserved = quantityReserved;
+		}
+
 	}
 
 	
