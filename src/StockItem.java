@@ -18,6 +18,7 @@ public class StockItem implements Comparable<StockItem> {
 		this.name = name;
 		this.price = price;
 		this.quantityInStock = quantityStock;
+		this.reserved = 0;
 	}
 	
 	
